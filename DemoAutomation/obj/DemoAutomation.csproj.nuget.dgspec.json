@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\demoautomation\\DemoAutomation\\DemoAutomation.csproj": {}
+    "C:\\Dev\\DemoAutomation\\DemoAutomation\\DemoAutomation.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\demoautomation\\DemoAutomation\\DemoAutomation.csproj": {
+    "C:\\Dev\\DemoAutomation\\DemoAutomation\\DemoAutomation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\demoautomation\\DemoAutomation\\DemoAutomation.csproj",
+        "projectUniqueName": "C:\\Dev\\DemoAutomation\\DemoAutomation\\DemoAutomation.csproj",
         "projectName": "DemoAutomation",
-        "projectPath": "C:\\Dev\\demoautomation\\DemoAutomation\\DemoAutomation.csproj",
+        "projectPath": "C:\\Dev\\DemoAutomation\\DemoAutomation\\DemoAutomation.csproj",
         "packagesPath": "C:\\Users\\roman.havura\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\demoautomation\\DemoAutomation\\obj\\",
+        "outputPath": "C:\\Dev\\DemoAutomation\\DemoAutomation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

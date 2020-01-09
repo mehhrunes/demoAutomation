@@ -11,6 +11,8 @@ namespace DemoAutomation.PageObjects.Cars
             driver.FindElement(By.XPath("//iframe[contains(@title, 'Rich Text Editor')]"));
 
         private IWebElement CarDescriptionField => driver.FindElement(By.TagName("p"));
+
+        private IWebElement AddCarButton => driver.FindElement(By.Id("add"));
         
         public MainCarSettingsSection MainSettings => new MainCarSettingsSection();
 
@@ -19,6 +21,12 @@ namespace DemoAutomation.PageObjects.Cars
             TypeCarName(car);
             TypeCarDescription(car);
             return this;
+        }
+
+        public CarsManagementPage ClickAddCarButton()
+        {
+            AddCarButton.Click();
+            return new CarsManagementPage();
         }
         
         private void TypeCarName(CarModel car) => CarNameField.SendKeys(car.CarName);

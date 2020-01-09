@@ -1,4 +1,5 @@
-﻿using DemoAutomation.Models;
+﻿using System.Reflection;
+using DemoAutomation.Models;
 using OpenQA.Selenium;
 using OpenQA.Selenium.DevTools.Network;
 using OpenQA.Selenium.Support.UI;
@@ -24,6 +25,18 @@ namespace DemoAutomation.PageObjects.Cars
         private IWebElement VatTaxSelect => driver.FindElement(By.Name("taxtype"));
 
         private IWebElement VatAmountField => driver.FindElement(By.Name("taxvalue"));
+
+        private IWebElement StarsSelect => driver.FindElement(By.Name("carstars"));
+
+        private IWebElement PassengersSelect => driver.FindElement(By.Name("passangers"));
+
+        private IWebElement CarDoorsSelect => driver.FindElement(By.Name("doors"));
+
+        private IWebElement TransmissionSelect => driver.FindElement(By.Name("transmission"));
+
+        private IWebElement BaggageSelect => driver.FindElement(By.Name("baggage"));
+
+        private IWebElement AirportPickUpSelect => driver.FindElement(By.Name("airportpickup"));
 
         public CarCreationPage SelectCarStatus(CarModel car)
         {
@@ -86,6 +99,48 @@ namespace DemoAutomation.PageObjects.Cars
         public CarCreationPage SetVatAmount(CarModel car)
         {
             VatAmountField.SendKeys(car.Setting.VatAmount.ToString());
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SelectStars(CarModel car)
+        {
+            var starsSelect = new SelectElement(StarsSelect);
+            starsSelect.SelectByValue(car.Setting.Stars.ToString());
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SelectPassengers(CarModel car)
+        {
+            var passengersSelect = new SelectElement(PassengersSelect);
+            passengersSelect.SelectByValue(car.Setting.Passengers.ToString());
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SelectCarDoors(CarModel car)
+        {
+            var carDoorsSelect = new SelectElement(CarDoorsSelect);
+            carDoorsSelect.SelectByValue(car.Setting.Doors.ToString());
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SelectTransmission(CarModel car)
+        {
+            var transmissionSelect = new SelectElement(TransmissionSelect);
+            transmissionSelect.SelectByText(car.Setting.Transmission.ToString());
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SelectBaggage(CarModel car)
+        {
+            var baggageSelect = new SelectElement(BaggageSelect);
+            baggageSelect.SelectByValue(car.Setting.Baggage);
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SelectAirportPickUp(CarModel car)
+        {
+            var airportPickUpSelect = new SelectElement(AirportPickUpSelect);
+            airportPickUpSelect.SelectByText(car.Setting.AirportPickUp.ToString());
             return new CarCreationPage();
         }
     }
