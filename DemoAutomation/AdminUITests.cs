@@ -8,14 +8,19 @@ namespace DemoAutomation
 {
     public class Tests : UITestFixture
     {
-        private readonly CarModel car = CarModel.GetBasicCar();
+        private readonly CarModel car = CarModel.GetCarWithSettings();
         
         [Test]
         public void Test1()
         {
             new AdminConsole().OpenCars()
                 .ClickAddCarButton()
-                    .AddGeneralCarDetails(car);
+                    .AddGeneralCarDetails(car)
+                .MainSettings.SelectCarStatus(car)
+                .MainSettings.SelectCarType(car)
+                .MainSettings.SelectIsFeatured(car)
+                .MainSettings.SetFeaturedFrom(car)
+                .MainSettings.SetFeaturedTo(car);
         }
     }
 }

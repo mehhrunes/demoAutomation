@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using DemoAutomation.Models;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace DemoAutomation.PageObjects.Cars
 {
@@ -13,6 +15,45 @@ namespace DemoAutomation.PageObjects.Cars
         private IWebElement FeaturedFromDateField => driver.FindElement(By.Name("ffrom"));
 
         private IWebElement FeaturedToDateField => driver.FindElement(By.Name("fto"));
-        
+
+        private IWebElement DepositSelect => driver.FindElement(By.Name("deposittype"));
+
+        private IWebElement VatTaxSelect => driver.FindElement(By.Name("taxtype"));
+
+        public CarCreationPage SelectCarStatus(CarModel car)
+        {
+            var statusSelect = new SelectElement(CarStatusSelect);
+            statusSelect.SelectByText(car.Setting.CarStatus.ToString());
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SelectCarType(CarModel car)
+        {
+            CarTypeDropDown.Click();
+            WaitForElementToBeVisible(By.ClassName("select2-drop-active"));
+            var input = driver.FindElement(By.XPath("//div[contains(@class, 'select2-drop-active')]//input"));
+            input.SendKeys(car.Setting.CarType.ToString());
+            input.SendKeys(Keys.Enter);
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SelectIsFeatured(CarModel car)
+        {
+            var isFeaturedSelect = new SelectElement(IsFeaturedSelect);
+            isFeaturedSelect.SelectByText(car.Setting.IsFeatured.ToString());
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SetFeaturedFrom(CarModel car)
+        {
+            FeaturedFromDateField.SendKeys(car.Setting.FeaturedFrom.ToShortDateString());
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SetFeaturedTo(CarModel car)
+        {
+            FeaturedToDateField.SendKeys(car.Setting.FeaturedTo.ToShortDateString());
+            return new CarCreationPage();
+        }
     }
 }
