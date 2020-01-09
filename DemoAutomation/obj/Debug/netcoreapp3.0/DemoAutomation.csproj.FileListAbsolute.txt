@@ -105,3 +105,5 @@ C:\Dev\demoautomation\DemoAutomation\bin\Debug\netcoreapp3.0\Serilog.Enrichers.E
 C:\Dev\demoautomation\DemoAutomation\bin\Debug\netcoreapp3.0\Serilog.Enrichers.Process.dll
 C:\Dev\demoautomation\DemoAutomation\bin\Debug\netcoreapp3.0\Serilog.Sinks.Console.dll
 C:\Dev\demoautomation\DemoAutomation\bin\Debug\netcoreapp3.0\Serilog.Sinks.File.dll
+C:\Dev\demoautomation\DemoAutomation\bin\Debug\netcoreapp3.0\MethodDecorator.dll
+C:\Dev\demoautomation\DemoAutomation\obj\Debug\netcoreapp3.0\DemoAutomation.csproj.Fody.CopyLocal.cache

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\DemoAutomation\\DemoAutomation\\DemoAutomation.csproj": {}
+    "C:\\Dev\\demoautomation\\DemoAutomation\\DemoAutomation.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\DemoAutomation\\DemoAutomation\\DemoAutomation.csproj": {
+    "C:\\Dev\\demoautomation\\DemoAutomation\\DemoAutomation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\DemoAutomation\\DemoAutomation\\DemoAutomation.csproj",
+        "projectUniqueName": "C:\\Dev\\demoautomation\\DemoAutomation\\DemoAutomation.csproj",
         "projectName": "DemoAutomation",
-        "projectPath": "C:\\Dev\\DemoAutomation\\DemoAutomation\\DemoAutomation.csproj",
+        "projectPath": "C:\\Dev\\demoautomation\\DemoAutomation\\DemoAutomation.csproj",
         "packagesPath": "C:\\Users\\roman.havura\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\DemoAutomation\\DemoAutomation\\obj\\",
+        "outputPath": "C:\\Dev\\demoautomation\\DemoAutomation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -56,6 +56,10 @@
             "FluentAssertions": {
               "target": "Package",
               "version": "[5.10.0, )"
+            },
+            "MethodDecorator.Fody": {
+              "target": "Package",
+              "version": "[1.1.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

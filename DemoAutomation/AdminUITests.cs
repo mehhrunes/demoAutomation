@@ -1,6 +1,7 @@
 using System;
 using DemoAutomation.Models;
 using DemoAutomation.PageObjects;
+using DemoAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
 
@@ -11,6 +12,7 @@ namespace DemoAutomation
         private readonly CarModel car = CarModel.GetCarWithSettings();
         
         [Test]
+        [LogMethod]
         public void Test1()
         {
             new AdminConsole().OpenCars()

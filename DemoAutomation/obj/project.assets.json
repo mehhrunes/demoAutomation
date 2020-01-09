@@ -47,6 +47,28 @@
           "lib/netcoreapp2.1/FluentAssertions.dll": {}
         }
       },
+      "Fody/6.0.0": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
+        }
+      },
+      "MethodDecorator.Fody/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "6.0.0",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/MethodDecorator.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/MethodDecorator.dll": {}
+        },
+        "build": {
+          "build/MethodDecorator.Fody.props": {}
+        }
+      },
       "Microsoft.CodeCoverage/16.2.0": {
         "type": "package",
         "compile": {
@@ -1576,6 +1598,55 @@
         "lib/netstandard2.1/FluentAssertions.dll",
         "lib/netstandard2.1/FluentAssertions.pdb",
         "lib/netstandard2.1/FluentAssertions.xml"
+      ]
+    },
+    "Fody/6.0.0": {
+      "sha512": "rH9Q7GapghyLYESfeCUOqh0S70eLc3FAikIgEEyGeng3JJf1M7mt2BUxjz93o3ipDXLrKn1s69AIEolmnVn8xg==",
+      "type": "package",
+      "path": "fody/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Fody.targets",
+        "fody.6.0.0.nupkg.sha512",
+        "fody.nuspec",
+        "netclassictask/Fody.dll",
+        "netclassictask/FodyCommon.dll",
+        "netclassictask/FodyHelpers.dll",
+        "netclassictask/FodyIsolated.dll",
+        "netclassictask/Mono.Cecil.Pdb.dll",
+        "netclassictask/Mono.Cecil.Pdb.pdb",
+        "netclassictask/Mono.Cecil.Rocks.dll",
+        "netclassictask/Mono.Cecil.Rocks.pdb",
+        "netclassictask/Mono.Cecil.dll",
+        "netclassictask/Mono.Cecil.pdb",
+        "netstandardtask/Fody.dll",
+        "netstandardtask/FodyCommon.dll",
+        "netstandardtask/FodyHelpers.dll",
+        "netstandardtask/FodyIsolated.dll",
+        "netstandardtask/Mono.Cecil.Pdb.dll",
+        "netstandardtask/Mono.Cecil.Pdb.pdb",
+        "netstandardtask/Mono.Cecil.Rocks.dll",
+        "netstandardtask/Mono.Cecil.Rocks.pdb",
+        "netstandardtask/Mono.Cecil.dll",
+        "netstandardtask/Mono.Cecil.pdb"
+      ]
+    },
+    "MethodDecorator.Fody/1.1.0": {
+      "sha512": "76cHYp/OqPBmCqlE1YtyGSkdfWkk3y/vIsnth9cgtYoNW+lxTd54EAj7CTwTJQkf8ZURvVwX/mw4nExc5sGCtA==",
+      "type": "package",
+      "path": "methoddecorator.fody/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MethodDecorator.Fody.props",
+        "lib/net452/MethodDecorator.dll",
+        "lib/net452/MethodDecorator.xml",
+        "lib/netstandard1.0/MethodDecorator.dll",
+        "lib/netstandard1.0/MethodDecorator.xml",
+        "methoddecorator.fody.1.1.0.nupkg.sha512",
+        "methoddecorator.fody.nuspec",
+        "weaver/MethodDecorator.Fody.dll"
       ]
     },
     "Microsoft.CodeCoverage/16.2.0": {
@@ -5253,6 +5324,7 @@
       "DotNetSeleniumExtras.PageObjects.Core >= 4.0.0-alpha01",
       "DotNetSeleniumExtras.WaitHelpers >= 3.11.0",
       "FluentAssertions >= 5.10.0",
+      "MethodDecorator.Fody >= 1.1.0",
       "Microsoft.NET.Test.Sdk >= 16.2.0",
       "NUnit3TestAdapter >= 3.13.0",
       "Newtonsoft.Json >= 12.0.3",
@@ -5325,6 +5397,10 @@
           "FluentAssertions": {
             "target": "Package",
             "version": "[5.10.0, )"
+          },
+          "MethodDecorator.Fody": {
+            "target": "Package",
+            "version": "[1.1.0, )"
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
