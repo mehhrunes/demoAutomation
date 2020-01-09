@@ -8,7 +8,7 @@ namespace DemoAutomation
 {
     public class Tests : UITestFixture
     {
-        private readonly CarModel car = CarModel.GetRandomCar();
+        private readonly CarModel car = CarModel.GetBasicCar();
         
         [Test]
         public void Test1()
