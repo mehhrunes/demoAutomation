@@ -1,0 +1,6 @@
+﻿{
+  "baseUrl": "https://www.phptravels.net/admin",
+  "browser" : "Chrome",
+  "login" : "admin@phptravels.com",
+  "password" : "demoadmin"
+}
