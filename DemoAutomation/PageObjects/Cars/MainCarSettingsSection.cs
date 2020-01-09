@@ -58,6 +58,8 @@ namespace DemoAutomation.PageObjects.Cars
         public CarCreationPage SetFeaturedTo(CarModel car)
         {
             FeaturedToDateField.SendKeys(car.Setting.FeaturedTo.ToShortDateString());
+            //Click to hide the date pickers
+            FeaturedToDateField.Click();
             return new CarCreationPage();
         }
 

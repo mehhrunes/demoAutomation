@@ -46,6 +46,18 @@ namespace DemoAutomation.Models
             public DepositType VatType { get; set; }
             
             public int VatAmount { get; set; }
+            
+            public int Stars { get; set; }
+
+            public int Passengers { get; set; }
+
+            public int Doors { get; set; }
+
+            public TransmissionType Transmission { get; set; }
+
+            public string Baggage { get; set; }
+
+            public YesNo AirportPickUp { get; set; }
 
             public static MainCarSetting GetRandomMainSettings()
             {
@@ -59,6 +71,12 @@ namespace DemoAutomation.Models
                     .RuleFor(s => s.DepositAmount, f => f.Random.Number(10, 100))
                     .RuleFor(s => s.VatType, f => f.PickRandom<DepositType>())
                     .RuleFor(s => s.VatAmount, f => f.Random.Number(10, 100))
+                    .RuleFor(s => s.Stars, f => f.Random.Number(0, 5))
+                    .RuleFor(s => s.Passengers, f => f.Random.Number(4, 6))
+                    .RuleFor(s => s.Doors, f => f.Random.Number(2, 5))
+                    .RuleFor(s => s.Transmission, f => f.PickRandom<TransmissionType>())
+                    .RuleFor(s => s.Baggage, f => $"x{f.Random.Number(1, 6)}")
+                    .RuleFor(s => s.AirportPickUp, f => f.PickRandom<YesNo>())
                     .Generate();
             }
         }
