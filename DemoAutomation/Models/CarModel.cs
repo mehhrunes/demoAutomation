@@ -1,5 +1,6 @@
 ﻿using System;
 using Bogus;
+using Bogus.Extensions;
 
 namespace DemoAutomation.Models
 {
@@ -38,6 +39,14 @@ namespace DemoAutomation.Models
 
             public DateTime FeaturedTo { get; set; }
 
+            public DepositType DepositType { get; set; }
+            
+            public int DepositAmount { get; set; }
+
+            public DepositType VatType { get; set; }
+            
+            public int VatAmount { get; set; }
+
             public static MainCarSetting GetRandomMainSettings()
             {
                 return new Faker<MainCarSetting>()
@@ -46,6 +55,10 @@ namespace DemoAutomation.Models
                     .RuleFor(s => s.IsFeatured, f => f.PickRandom<YesNo>())
                     .RuleFor(s => s.FeaturedFrom, f => f.Date.Past(20, DateTime.Today))
                     .RuleFor(s => s.FeaturedTo, f => f.Date.Future(5, DateTime.Today))
+                    .RuleFor(s => s.DepositType, f => f.PickRandom<DepositType>())
+                    .RuleFor(s => s.DepositAmount, f => f.Random.Number(10, 100))
+                    .RuleFor(s => s.VatType, f => f.PickRandom<DepositType>())
+                    .RuleFor(s => s.VatAmount, f => f.Random.Number(10, 100))
                     .Generate();
             }
         }

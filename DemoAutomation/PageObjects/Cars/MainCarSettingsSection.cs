@@ -1,5 +1,6 @@
 ﻿using DemoAutomation.Models;
 using OpenQA.Selenium;
+using OpenQA.Selenium.DevTools.Network;
 using OpenQA.Selenium.Support.UI;
 
 namespace DemoAutomation.PageObjects.Cars
@@ -18,7 +19,11 @@ namespace DemoAutomation.PageObjects.Cars
 
         private IWebElement DepositSelect => driver.FindElement(By.Name("deposittype"));
 
+        private IWebElement DepositAmountField => driver.FindElement(By.Name("depositvalue"));
+
         private IWebElement VatTaxSelect => driver.FindElement(By.Name("taxtype"));
+
+        private IWebElement VatAmountField => driver.FindElement(By.Name("taxvalue"));
 
         public CarCreationPage SelectCarStatus(CarModel car)
         {
@@ -53,6 +58,32 @@ namespace DemoAutomation.PageObjects.Cars
         public CarCreationPage SetFeaturedTo(CarModel car)
         {
             FeaturedToDateField.SendKeys(car.Setting.FeaturedTo.ToShortDateString());
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SelectDepositType(CarModel car)
+        {
+            var depositSelect = new SelectElement(DepositSelect);
+            depositSelect.SelectByText(car.Setting.DepositType.ToString());
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SetDepositAmount(CarModel car)
+        {
+            DepositAmountField.SendKeys(car.Setting.DepositAmount.ToString());
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SelectVatType(CarModel car)
+        {
+            var vatSelect = new SelectElement(VatTaxSelect);
+            vatSelect.SelectByText(car.Setting.VatType.ToString());
+            return new CarCreationPage();
+        }
+
+        public CarCreationPage SetVatAmount(CarModel car)
+        {
+            VatAmountField.SendKeys(car.Setting.VatAmount.ToString());
             return new CarCreationPage();
         }
     }

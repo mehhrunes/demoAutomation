@@ -20,7 +20,11 @@ namespace DemoAutomation
                 .MainSettings.SelectCarType(car)
                 .MainSettings.SelectIsFeatured(car)
                 .MainSettings.SetFeaturedFrom(car)
-                .MainSettings.SetFeaturedTo(car);
+                .MainSettings.SetFeaturedTo(car)
+                .MainSettings.SelectDepositType(car)
+                .MainSettings.SetDepositAmount(car)
+                .MainSettings.SelectVatType(car)
+                .MainSettings.SetVatAmount(car);
         }
     }
 }
