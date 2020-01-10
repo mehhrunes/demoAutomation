@@ -4,7 +4,7 @@ using DemoAutomation.Utils;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace DemoAutomation
+namespace DemoAutomation.UITests
 {
     public class CarCreationTests : UITestFixture
     {
