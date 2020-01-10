@@ -1,4 +1,4 @@
-﻿using DemoAutomation.Models;
+﻿using DemoAutomation.Models.Cars;
 using OpenQA.Selenium;
 
 namespace DemoAutomation.PageObjects.Cars

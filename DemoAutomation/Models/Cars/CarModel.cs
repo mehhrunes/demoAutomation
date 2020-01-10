@@ -1,8 +1,7 @@
 ﻿using System;
 using Bogus;
-using Bogus.Extensions;
 
-namespace DemoAutomation.Models
+namespace DemoAutomation.Models.Cars
 {
     public class CarModel
     {

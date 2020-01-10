@@ -1,9 +1,7 @@
-using System;
-using DemoAutomation.Models;
+using DemoAutomation.Models.Cars;
 using DemoAutomation.PageObjects;
 using DemoAutomation.Utils;
 using NUnit.Framework;
-using OpenQA.Selenium.Chrome;
 
 namespace DemoAutomation
 {

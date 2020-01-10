@@ -1,4 +1,4 @@
-﻿namespace DemoAutomation.Models
+﻿namespace DemoAutomation.Models.Cars
 {
     public enum CarType
     {

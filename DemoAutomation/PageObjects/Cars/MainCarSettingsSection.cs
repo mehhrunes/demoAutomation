@@ -1,7 +1,5 @@
-﻿using System.Reflection;
-using DemoAutomation.Models;
+﻿using DemoAutomation.Models.Cars;
 using OpenQA.Selenium;
-using OpenQA.Selenium.DevTools.Network;
 using OpenQA.Selenium.Support.UI;
 
 namespace DemoAutomation.PageObjects.Cars

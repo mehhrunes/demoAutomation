@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using DemoAutomation.PageObjects.Cars;
+﻿using DemoAutomation.PageObjects.Cars;
 using OpenQA.Selenium;
 
 namespace DemoAutomation.PageObjects
