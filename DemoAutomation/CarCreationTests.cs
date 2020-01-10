@@ -1,19 +1,20 @@
 using DemoAutomation.Models.Cars;
 using DemoAutomation.PageObjects;
 using DemoAutomation.Utils;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace DemoAutomation
 {
-    public class Tests : UITestFixture
+    public class CarCreationTests : UITestFixture
     {
         private readonly CarModel car = CarModel.GetCarWithSettings();
         
         [Test]
         [LogMethod]
-        public void Test1()
+        public void Cars_CreateCar_AddsCarToTheTable()
         {
-            new AdminConsole().OpenCars()
+            var newCar = new AdminConsole().OpenCars()
                 .ClickAddCarButton()
                     .AddGeneralCarDetails(car)
                     .MainSettings.SelectCarStatus(car)
@@ -31,7 +32,10 @@ namespace DemoAutomation
                     .MainSettings.SelectTransmission(car)
                     .MainSettings.SelectBaggage(car)
                     .MainSettings.SelectAirportPickUp(car)
-                    .ClickAddCarButton();
+                    .ClickAddCarButton()
+                .GetCarNameFromTable(car);
+
+            newCar.Should().Be(car.CarName);
         }
     }
 }
