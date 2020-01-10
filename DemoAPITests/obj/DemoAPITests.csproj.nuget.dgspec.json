@@ -41,6 +41,14 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[28.4.4, )"
+            },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.0, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.2.0, )"
