@@ -9,7 +9,7 @@ namespace DemoAPITests.APITests
 {
     [TestFixture]
     [Parallelizable(ParallelScope.Children)]
-    public class SampleAPITests
+    public class SampleApiTests
     {
         private readonly PostModel postModel = new PostModel
         {
