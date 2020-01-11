@@ -4,7 +4,7 @@ using RestSharp;
 
 namespace DemoAPITests.ApiProxy
 {
-    public class SampleAPI
+    public class SampleApi
     {
         private const string BaseUrl = "https://jsonplaceholder.typicode.com/";
 
@@ -12,7 +12,7 @@ namespace DemoAPITests.ApiProxy
 
         private IRestResponse _response;
 
-        public SampleAPI()
+        public SampleApi()
         {
             _client = new RestClient(BaseUrl);
         }
