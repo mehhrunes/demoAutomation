@@ -11,8 +11,7 @@ namespace DemoAutomation
     public class UITestFixture
     {
         private IWebDriver driver;
-        private Config config = Config.CurrentConfig;
-
+        
         [OneTimeSetUp]
         [LogMethod]
         public void FixtureSetUp()
@@ -20,7 +19,7 @@ namespace DemoAutomation
             driver = DriverManager.GetInstance().Driver;
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(15);
-            driver.Url = config.BaseUrl;
+            driver.Url = Config.CurrentConfig.BaseUrl;
 
             AdminSteps.LogInAsAdmin();
         }
