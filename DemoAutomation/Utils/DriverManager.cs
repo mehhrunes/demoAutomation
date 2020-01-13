@@ -8,9 +8,9 @@ namespace DemoAutomation.Utils
 {
     public class DriverManager
     {
-        public IWebDriver Driver { get; }
         private Browser _browser;
         private static DriverManager _instance;
+        public IWebDriver Driver { get; }
 
         private DriverManager()
         {
