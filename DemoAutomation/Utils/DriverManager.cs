@@ -37,7 +37,7 @@ namespace DemoAutomation.Utils
         {
             return browser switch
             {
-                Browser.Chrome => (IWebDriver) new ChromeDriver(GetOptions()),
+                Browser.Chrome => new ChromeDriver(GetOptions()),
                 Browser.Firefox => new FirefoxDriver(),
                 _ => throw new ArgumentException($"Unexpected browser type: {browser}")
             };
