@@ -10,16 +10,16 @@ namespace DemoAutomation
 {
     public class UITestFixture
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
         
         [OneTimeSetUp]
         [LogMethod]
         public void FixtureSetUp()
         {
-            driver = DriverManager.GetInstance().Driver;
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(15);
-            driver.Url = Config.CurrentConfig.BaseUrl;
+            _driver = DriverManager.GetInstance().Driver;
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(15);
+            _driver.Url = Config.CurrentConfig.BaseUrl;
 
             AdminSteps.LogInAsAdmin();
         }
@@ -38,7 +38,7 @@ namespace DemoAutomation
         [LogMethod]
         public void FixtureTearDown()
         {
-            driver.Quit();
+            _driver.Quit();
         }
 
         public void Arrange(Action action)

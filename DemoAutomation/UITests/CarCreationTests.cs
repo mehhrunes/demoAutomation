@@ -8,14 +8,14 @@ namespace DemoAutomation.UITests
 {
     public class CarCreationTests : UITestFixture
     {
-        private readonly CarModel car = CarModel.GetCarWithSettings();
+        private readonly CarModel _car = CarModel.GetCarWithSettings();
         
         [Test]
         [LogMethod]
         public void Cars_CreateCar_AddsCarToTheTable()
         {
-            var newCar = CarSteps.CreateCar(car);
-            newCar.Should().Be(car.CarName);
+            var newCar = CarSteps.CreateCar(_car);
+            newCar.Should().Be(_car.CarName);
         }
     }
 }

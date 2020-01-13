@@ -5,7 +5,7 @@ namespace DemoAutomation.PageObjects.Cars
 {
     public class CarsManagementPage : Page
     {
-        private IWebElement AddCarButton => driver.FindElement(By.XPath("//button[@type='submit']"));
+        private IWebElement AddCarButton => Driver.FindElement(By.XPath("//button[@type='submit']"));
 
         public CarCreationPage ClickAddCarButton()
         {
@@ -13,6 +13,6 @@ namespace DemoAutomation.PageObjects.Cars
             return new CarCreationPage();
         }
 
-        public string GetCarNameFromTable(CarModel car) => driver.FindElement(By.XPath("//table/descendant::a[text()='" + car.CarName + "']")).Text;
+        public string GetCarNameFromTable(CarModel car) => Driver.FindElement(By.XPath("//table/descendant::a[text()='" + car.CarName + "']")).Text;
     }
 }

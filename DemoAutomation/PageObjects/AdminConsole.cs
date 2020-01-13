@@ -5,9 +5,9 @@ namespace DemoAutomation.PageObjects
 {
     public class AdminConsole : Page
     {
-        private IWebElement CarsExpandLink => driver.FindElement(By.XPath("//a[@href='#Cars' and @data-toggle='collapse']"));
+        private IWebElement CarsExpandLink => Driver.FindElement(By.XPath("//a[@href='#Cars' and @data-toggle='collapse']"));
 
-        private IWebElement CarsLink => driver.FindElement(By.XPath("//ul[@id='Cars']//a[text()='Cars']"));
+        private IWebElement CarsLink => Driver.FindElement(By.XPath("//ul[@id='Cars']//a[text()='Cars']"));
 
         public CarsManagementPage OpenCars()
         {

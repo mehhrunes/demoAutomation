@@ -9,28 +9,28 @@ namespace DemoAutomation
 {
     public class Page
     {
-        protected readonly IWebDriver driver;
-        private WebDriverWait wait;
-        private IJavaScriptExecutor javaScriptExecutor;
-        private Actions actions;
+        protected readonly IWebDriver Driver;
+        private readonly WebDriverWait _wait;
+        private IJavaScriptExecutor _javaScriptExecutor;
+        private Actions _actions;
 
         protected Page()
         {
-            driver = DriverManager.GetInstance().Driver;
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
-            javaScriptExecutor = driver as IJavaScriptExecutor;
-            actions = new Actions(driver);
+            Driver = DriverManager.GetInstance().Driver;
+            _wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
+            _javaScriptExecutor = Driver as IJavaScriptExecutor;
+            _actions = new Actions(Driver);
         }
 
-        protected void WaitForElementToBeVisible(IWebElement element) => wait.Until(ExpectedConditions.ElementToBeClickable(element));
+        protected void WaitForElementToBeVisible(IWebElement element) => _wait.Until(ExpectedConditions.ElementToBeClickable(element));
 
-        protected void WaitForElementToBeVisible(By locator) => wait.Until(ExpectedConditions.ElementToBeClickable(locator));
+        protected void WaitForElementToBeVisible(By locator) => _wait.Until(ExpectedConditions.ElementToBeClickable(locator));
 
-        protected void SwitchToFrame(IWebElement frame) => driver.SwitchTo().Frame(frame);
+        protected void SwitchToFrame(IWebElement frame) => Driver.SwitchTo().Frame(frame);
         
         protected void SwitchToDefaultContent()
         {
-            driver.SwitchTo().DefaultContent();
+            Driver.SwitchTo().DefaultContent();
         }
     }
 }

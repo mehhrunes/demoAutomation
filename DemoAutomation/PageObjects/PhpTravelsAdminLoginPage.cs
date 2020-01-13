@@ -4,9 +4,9 @@ namespace DemoAutomation.PageObjects
 {
     public class PhpTravelsAdminLoginPage : Page
     {
-        private IWebElement EmailField => driver.FindElement(By.Name("email"));
+        private IWebElement EmailField => Driver.FindElement(By.Name("email"));
 
-        private IWebElement PasswordField => driver.FindElement(By.Name("password"));
+        private IWebElement PasswordField => Driver.FindElement(By.Name("password"));
 
         public AdminConsole LogInAsAdmin()
         {

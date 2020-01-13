@@ -5,14 +5,14 @@ namespace DemoAutomation.PageObjects.Cars
 {
     public class CarCreationPage : Page
     {
-        private IWebElement CarNameField => driver.FindElement(By.Name("carname"));
+        private IWebElement CarNameField => Driver.FindElement(By.Name("carname"));
 
         private IWebElement CarDescriptionFrame =>
-            driver.FindElement(By.XPath("//iframe[contains(@title, 'Rich Text Editor')]"));
+            Driver.FindElement(By.XPath("//iframe[contains(@title, 'Rich Text Editor')]"));
 
-        private IWebElement CarDescriptionField => driver.FindElement(By.TagName("p"));
+        private IWebElement CarDescriptionField => Driver.FindElement(By.TagName("p"));
 
-        private IWebElement AddCarButton => driver.FindElement(By.Id("add"));
+        private IWebElement AddCarButton => Driver.FindElement(By.Id("add"));
         
         public MainCarSettingsSection MainSettings => new MainCarSettingsSection();
 

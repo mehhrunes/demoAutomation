@@ -6,35 +6,35 @@ namespace DemoAutomation.PageObjects.Cars
 {
     public class MainCarSettingsSection : Page
     {
-        private IWebElement CarStatusSelect => driver.FindElement(By.Name("carstatus"));
+        private IWebElement CarStatusSelect => Driver.FindElement(By.Name("carstatus"));
 
-        private IWebElement CarTypeDropDown => driver.FindElement(By.Id("s2id_autogen21"));
+        private IWebElement CarTypeDropDown => Driver.FindElement(By.Id("s2id_autogen21"));
 
-        private IWebElement IsFeaturedSelect => driver.FindElement(By.Id("isfeatured"));
+        private IWebElement IsFeaturedSelect => Driver.FindElement(By.Id("isfeatured"));
 
-        private IWebElement FeaturedFromDateField => driver.FindElement(By.Name("ffrom"));
+        private IWebElement FeaturedFromDateField => Driver.FindElement(By.Name("ffrom"));
 
-        private IWebElement FeaturedToDateField => driver.FindElement(By.Name("fto"));
+        private IWebElement FeaturedToDateField => Driver.FindElement(By.Name("fto"));
 
-        private IWebElement DepositSelect => driver.FindElement(By.Name("deposittype"));
+        private IWebElement DepositSelect => Driver.FindElement(By.Name("deposittype"));
 
-        private IWebElement DepositAmountField => driver.FindElement(By.Name("depositvalue"));
+        private IWebElement DepositAmountField => Driver.FindElement(By.Name("depositvalue"));
 
-        private IWebElement VatTaxSelect => driver.FindElement(By.Name("taxtype"));
+        private IWebElement VatTaxSelect => Driver.FindElement(By.Name("taxtype"));
 
-        private IWebElement VatAmountField => driver.FindElement(By.Name("taxvalue"));
+        private IWebElement VatAmountField => Driver.FindElement(By.Name("taxvalue"));
 
-        private IWebElement StarsSelect => driver.FindElement(By.Name("carstars"));
+        private IWebElement StarsSelect => Driver.FindElement(By.Name("carstars"));
 
-        private IWebElement PassengersSelect => driver.FindElement(By.Name("passangers"));
+        private IWebElement PassengersSelect => Driver.FindElement(By.Name("passangers"));
 
-        private IWebElement CarDoorsSelect => driver.FindElement(By.Name("doors"));
+        private IWebElement CarDoorsSelect => Driver.FindElement(By.Name("doors"));
 
-        private IWebElement TransmissionSelect => driver.FindElement(By.Name("transmission"));
+        private IWebElement TransmissionSelect => Driver.FindElement(By.Name("transmission"));
 
-        private IWebElement BaggageSelect => driver.FindElement(By.Name("baggage"));
+        private IWebElement BaggageSelect => Driver.FindElement(By.Name("baggage"));
 
-        private IWebElement AirportPickUpSelect => driver.FindElement(By.Name("airportpickup"));
+        private IWebElement AirportPickUpSelect => Driver.FindElement(By.Name("airportpickup"));
 
         public CarCreationPage SelectCarStatus(CarModel car)
         {
@@ -47,7 +47,7 @@ namespace DemoAutomation.PageObjects.Cars
         {
             CarTypeDropDown.Click();
             WaitForElementToBeVisible(By.ClassName("select2-drop-active"));
-            var input = driver.FindElement(By.XPath("//div[contains(@class, 'select2-drop-active')]//input"));
+            var input = Driver.FindElement(By.XPath("//div[contains(@class, 'select2-drop-active')]//input"));
             input.SendKeys(car.Setting.CarType.ToString());
             input.SendKeys(Keys.Enter);
             return new CarCreationPage();
