@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using System;
+using RestSharp;
 
 namespace DemoAPITests.ApiProxy
 {
@@ -10,7 +11,7 @@ namespace DemoAPITests.ApiProxy
 
         protected IRestResponse Response;
 
-        public SampleApi()
+        protected SampleApi()
         {
             _client = new RestClient(BaseUrl);
         }
@@ -24,7 +25,7 @@ namespace DemoAPITests.ApiProxy
 
             if (response.ErrorException != null)
             {
-                //exception handling
+                throw new Exception("Sorry, I have no idea what happened.");
             }
 
             return response.Data;

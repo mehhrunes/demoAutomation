@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using DemoAutomation.Utils;
 using NUnit.Framework;
 using Serilog;
 
@@ -12,6 +13,7 @@ namespace DemoAutomation
         private const string LogTemplate = "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} {Level:u3}] [{ProcessId}] [{EnvironmentUserName}] {Message:lj}{NewLine}{Exception}";
         
         [OneTimeSetUp]
+        [LogMethod]
         public void OneTimeSetUp()
         {
             CleanLogDirectory();
@@ -28,6 +30,7 @@ namespace DemoAutomation
         }
 
         [OneTimeTearDown]
+        [LogMethod]
         public void OneTimeTearDown()
         {
             Log.CloseAndFlush();

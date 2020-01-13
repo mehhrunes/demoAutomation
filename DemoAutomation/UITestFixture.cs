@@ -9,10 +9,11 @@ namespace DemoAutomation
 {
     public class UITestFixture
     {
-        protected IWebDriver driver;
-        protected Config config = Config.CurrentConfig;
+        private IWebDriver driver;
+        private Config config = Config.CurrentConfig;
 
         [OneTimeSetUp]
+        [LogMethod]
         public void FixtureSetUp()
         {
             driver = DriverManager.GetInstance().Driver;
@@ -24,9 +25,10 @@ namespace DemoAutomation
         }
 
         [OneTimeTearDown]
+        [LogMethod]
         public void FixtureTearDown()
         {
-            // driver.Quit();
+            driver.Quit();
         }
 
         public void Arrange(Action action)

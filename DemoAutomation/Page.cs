@@ -10,9 +10,9 @@ namespace DemoAutomation
     public class Page
     {
         protected readonly IWebDriver driver;
-        protected WebDriverWait wait;
-        protected IJavaScriptExecutor javaScriptExecutor;
-        protected Actions actions;
+        private WebDriverWait wait;
+        private IJavaScriptExecutor javaScriptExecutor;
+        private Actions actions;
 
         protected Page()
         {
