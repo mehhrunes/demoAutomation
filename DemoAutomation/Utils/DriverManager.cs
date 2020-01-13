@@ -40,7 +40,6 @@ namespace DemoAutomation.Utils
             _ => throw new ArgumentException($"Unexpected browser type: {browser}")
         };
 
-
         private ChromeOptions GetOptions()
         {
             var options = new ChromeOptions();

@@ -12,8 +12,10 @@ namespace DemoAutomation
     public class SetUpFixture
     {
         private const string LogFolder = "Logs";
-        private const string LogTemplate = "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} {Level:u3}] [{ProcessId}] [{EnvironmentUserName}] {Message:lj}{NewLine}{Exception}";
-        
+
+        private const string LogTemplate =
+            "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} {Level:u3}] [{ProcessId}] [{EnvironmentUserName}] {Message:lj}{NewLine}{Exception}";
+
         [OneTimeSetUp]
         [LogMethod]
         public void OneTimeSetUp()
@@ -26,7 +28,8 @@ namespace DemoAutomation
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .WriteTo.File(pathToLog, Serilog.Events.LogEventLevel.Debug, outputTemplate: LogTemplate)
-                .WriteTo.Telegram("882242070:AAEOD8v3WLhViQsFR5J3U8mOYmIzm-W2Tu4", "317113860", restrictedToMinimumLevel: LogEventLevel.Error)
+                .WriteTo.Telegram("882242070:AAEOD8v3WLhViQsFR5J3U8mOYmIzm-W2Tu4", "317113860",
+                    restrictedToMinimumLevel: LogEventLevel.Error)
                 .Enrich.WithProcessId()
                 .Enrich.WithEnvironmentUserName()
                 .CreateLogger();
@@ -41,7 +44,8 @@ namespace DemoAutomation
 
         private void CleanLogDirectory()
         {
-            var pathToDirectory = new DirectoryInfo(Path.Combine(TestContext.CurrentContext.WorkDirectory, $"{LogFolder}"));
+            var pathToDirectory =
+                new DirectoryInfo(Path.Combine(TestContext.CurrentContext.WorkDirectory, $"{LogFolder}"));
             foreach (var directory in pathToDirectory.GetDirectories())
             {
                 directory.Delete(true);

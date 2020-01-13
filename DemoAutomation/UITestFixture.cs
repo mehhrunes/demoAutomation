@@ -11,7 +11,7 @@ namespace DemoAutomation
     public class UITestFixture
     {
         private IWebDriver _driver;
-        
+
         [OneTimeSetUp]
         [LogMethod]
         public void FixtureSetUp()
@@ -30,7 +30,8 @@ namespace DemoAutomation
         {
             if (TestContext.CurrentContext.Result.Outcome.Status.Equals(TestStatus.Failed))
             {
-                Log.Error($"{TestContext.CurrentContext.Test.Name} has failed: {TestContext.CurrentContext.Result.Message}");
+                Log.Error(
+                    $"{TestContext.CurrentContext.Test.Name} has failed: {TestContext.CurrentContext.Result.Message}");
             }
         }
 

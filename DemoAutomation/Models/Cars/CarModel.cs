@@ -6,7 +6,7 @@ namespace DemoAutomation.Models.Cars
     public class CarModel
     {
         public string CarName { get; set; }
-        
+
         public string CarDescription { get; set; }
 
         public MainCarSetting Setting { get; set; }
@@ -39,13 +39,13 @@ namespace DemoAutomation.Models.Cars
             public DateTime FeaturedTo { get; set; }
 
             public DepositType DepositType { get; set; }
-            
+
             public int DepositAmount { get; set; }
 
             public DepositType VatType { get; set; }
-            
+
             public int VatAmount { get; set; }
-            
+
             public int Stars { get; set; }
 
             public int Passengers { get; set; }

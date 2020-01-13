@@ -5,9 +5,11 @@ using MethodDecorator.Fody.Interfaces;
 using Serilog;
 
 [module: LogMethod]
+
 namespace DemoAutomation.Utils
 {
-    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor | AttributeTargets.Assembly | AttributeTargets.Module)]
+    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor | AttributeTargets.Assembly |
+                    AttributeTargets.Module)]
     public class LogMethodAttribute : Attribute, IMethodDecorator
     {
         private MethodBase _method;

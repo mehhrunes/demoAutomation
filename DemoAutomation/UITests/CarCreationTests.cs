@@ -9,7 +9,7 @@ namespace DemoAutomation.UITests
     public class CarCreationTests : UITestFixture
     {
         private readonly CarModel _car = CarModel.GetCarWithSettings();
-        
+
         [Test]
         [LogMethod]
         public void Cars_CreateCar_AddsCarToTheTable()

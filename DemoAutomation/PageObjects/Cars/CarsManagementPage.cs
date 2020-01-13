@@ -13,6 +13,7 @@ namespace DemoAutomation.PageObjects.Cars
             return new CarCreationPage();
         }
 
-        public string GetCarNameFromTable(CarModel car) => Driver.FindElement(By.XPath("//table/descendant::a[text()='" + car.CarName + "']")).Text;
+        public string GetCarNameFromTable(CarModel car) =>
+            Driver.FindElement(By.XPath("//table/descendant::a[text()='" + car.CarName + "']")).Text;
     }
 }

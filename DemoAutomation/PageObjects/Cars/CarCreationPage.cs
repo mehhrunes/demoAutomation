@@ -13,7 +13,7 @@ namespace DemoAutomation.PageObjects.Cars
         private IWebElement CarDescriptionField => Driver.FindElement(By.TagName("p"));
 
         private IWebElement AddCarButton => Driver.FindElement(By.Id("add"));
-        
+
         public MainCarSettingsSection MainSettings => new MainCarSettingsSection();
 
         public CarCreationPage AddGeneralCarDetails(CarModel car)
@@ -28,7 +28,7 @@ namespace DemoAutomation.PageObjects.Cars
             AddCarButton.Click();
             return new CarsManagementPage();
         }
-        
+
         private void TypeCarName(CarModel car) => CarNameField.SendKeys(car.CarName);
 
         private void TypeCarDescription(CarModel car)

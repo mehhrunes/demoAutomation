@@ -22,12 +22,14 @@ namespace DemoAutomation
             _actions = new Actions(Driver);
         }
 
-        protected void WaitForElementToBeVisible(IWebElement element) => _wait.Until(ExpectedConditions.ElementToBeClickable(element));
+        protected void WaitForElementToBeVisible(IWebElement element) =>
+            _wait.Until(ExpectedConditions.ElementToBeClickable(element));
 
-        protected void WaitForElementToBeVisible(By locator) => _wait.Until(ExpectedConditions.ElementToBeClickable(locator));
+        protected void WaitForElementToBeVisible(By locator) =>
+            _wait.Until(ExpectedConditions.ElementToBeClickable(locator));
 
         protected void SwitchToFrame(IWebElement frame) => Driver.SwitchTo().Frame(frame);
-        
+
         protected void SwitchToDefaultContent() => Driver.SwitchTo().DefaultContent();
     }
 }
