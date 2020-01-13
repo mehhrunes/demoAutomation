@@ -26,6 +26,7 @@
           "Serilog.Enrichers.Process": "2.0.1",
           "Serilog.Sinks.Console": "4.0.0-dev-00834",
           "Serilog.Sinks.File": "4.1.0",
+          "Serilog.Sinks.TelegramLog": "2.1.0",
           "NUnit": "3.12.0"
         },
         "runtime": {
@@ -530,6 +531,18 @@
           "lib/netstandard2.0/Serilog.Sinks.File.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "4.1.0.0"
+          }
+        }
+      },
+      "Serilog.Sinks.TelegramLog/2.1.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "Serilog": "2.9.1-dev-01154"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.Sinks.Telegram.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
           }
         }
       },
@@ -1314,6 +1327,13 @@
       "sha512": "sha512-U0b34w+ZikbqWEZ3ui7BdzxY/19zwrdhLtI3o6tfmLdD3oXxg7n2TZJjwCCTlKPgRuYic9CBWfrZevbb70mTaw==",
       "path": "serilog.sinks.file/4.1.0",
       "hashPath": "serilog.sinks.file.4.1.0.nupkg.sha512"
+    },
+    "Serilog.Sinks.TelegramLog/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-buTnicUA8T4FbdDkcBiwvmU1N9Mnz8ALuXd1ys7wx+/97nvxHlaTyI5FbikcV4FZdnnW5ttYJIccKJircgETyg==",
+      "path": "serilog.sinks.telegramlog/2.1.0",
+      "hashPath": "serilog.sinks.telegramlog.2.1.0.nupkg.sha512"
     },
     "System.AppContext/4.1.0": {
       "type": "package",

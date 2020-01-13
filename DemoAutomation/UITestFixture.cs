@@ -2,6 +2,7 @@
 using DemoAutomation.Steps;
 using DemoAutomation.Utils;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using Serilog;
 
@@ -22,6 +23,16 @@ namespace DemoAutomation
             driver.Url = config.BaseUrl;
 
             AdminSteps.LogInAsAdmin();
+        }
+
+        [TearDown]
+        [LogMethod]
+        public void TestTearDown()
+        {
+            if (TestContext.CurrentContext.Result.Outcome.Status.Equals(TestStatus.Failed))
+            {
+                Log.Error($"{TestContext.CurrentContext.Test.Name} has failed: {TestContext.CurrentContext.Result.Message}");
+            }
         }
 
         [OneTimeTearDown]

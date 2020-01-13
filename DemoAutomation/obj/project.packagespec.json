@@ -102,6 +102,10 @@
           "target": "Package",
           "version": "[4.1.0, )"
         },
+        "Serilog.Sinks.TelegramLog": {
+          "target": "Package",
+          "version": "[2.1.0, )"
+        },
         "nunit": {
           "target": "Package",
           "version": "[3.12.0, )"

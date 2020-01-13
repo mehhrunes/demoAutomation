@@ -3,6 +3,8 @@ using System.IO;
 using DemoAutomation.Utils;
 using NUnit.Framework;
 using Serilog;
+using Serilog.Events;
+using Serilog.Sinks.Telegram;
 
 namespace DemoAutomation
 {
@@ -24,6 +26,7 @@ namespace DemoAutomation
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .WriteTo.File(pathToLog, Serilog.Events.LogEventLevel.Debug, outputTemplate: LogTemplate)
+                .WriteTo.Telegram("882242070:AAEOD8v3WLhViQsFR5J3U8mOYmIzm-W2Tu4", "317113860", restrictedToMinimumLevel: LogEventLevel.Error)
                 .Enrich.WithProcessId()
                 .Enrich.WithEnvironmentUserName()
                 .CreateLogger();

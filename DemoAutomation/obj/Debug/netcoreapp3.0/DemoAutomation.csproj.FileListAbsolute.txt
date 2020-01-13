@@ -107,3 +107,4 @@ C:\Dev\demoautomation\DemoAutomation\bin\Debug\netcoreapp3.0\Serilog.Sinks.Conso
 C:\Dev\demoautomation\DemoAutomation\bin\Debug\netcoreapp3.0\Serilog.Sinks.File.dll
 C:\Dev\demoautomation\DemoAutomation\bin\Debug\netcoreapp3.0\MethodDecorator.dll
 C:\Dev\demoautomation\DemoAutomation\obj\Debug\netcoreapp3.0\DemoAutomation.csproj.Fody.CopyLocal.cache
+C:\Dev\demoautomation\DemoAutomation\bin\Debug\netcoreapp3.0\Serilog.Sinks.Telegram.dll
