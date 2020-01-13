@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using DemoAPITests.ApiModels;
-using RestSharp;
+﻿using RestSharp;
 
 namespace DemoAPITests.ApiProxy
 {
