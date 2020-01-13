@@ -33,15 +33,13 @@ namespace DemoAutomation.Utils
             Enum.TryParse(Config.CurrentConfig.Browser, out _browser);
         }
 
-        private IWebDriver SelectDriver(Browser browser)
+        private IWebDriver SelectDriver(Browser browser) => browser switch
         {
-            return browser switch
-            {
-                Browser.Chrome => new ChromeDriver(GetOptions()),
-                Browser.Firefox => new FirefoxDriver(),
-                _ => throw new ArgumentException($"Unexpected browser type: {browser}")
-            };
-        }
+            Browser.Chrome => new ChromeDriver(GetOptions()),
+            Browser.Firefox => new FirefoxDriver(),
+            _ => throw new ArgumentException($"Unexpected browser type: {browser}")
+        };
+
 
         private ChromeOptions GetOptions()
         {
