@@ -48,8 +48,7 @@ namespace DemoAPITests.APITests
 
             posts.First().UserId.Should().Be(1);
         }
-
-
+        
         [Test]
         public void Post_CreatePost_ReturnsPostData()
         {
