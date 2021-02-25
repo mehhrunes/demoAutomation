@@ -5,7 +5,7 @@ namespace DemoAPITests.ApiProxy
 {
     public class SampleApi
     {
-        private const string BaseUrl = "https://jsonplaceholder.typicode.com/";
+        private readonly string BaseUrl = ApiConfig.CurrentApiConfig.BaseUrl;
 
         private readonly IRestClient _client;
 
